@@ -1,0 +1,91 @@
+{
+  "logs": [
+    {
+      "id": 1,
+      "message": "Changed network card in server 007. ",
+      "attention": true,
+      "tech": "Sara Wilson",
+      "date": "2020-04-15T15:33:36.930Z"
+    },
+    {
+      "id": 2,
+      "message": "Fixed hard drive on workstation 002.",
+      "attention": false,
+      "tech": "John Doe",
+      "date": "2020-04-15T02:08:21.815Z"
+    },
+    {
+      "message": "1122 wireless router down.  ",
+      "attention": true,
+      "tech": "Sara Wilson",
+      "date": "2020-04-15T00:03:39.488Z",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "message": "Workstation 222 needs a second monitor an external webcam.",
+      "attention": false,
+      "tech": "Jane Doe",
+      "date": "2020-04-15T22:28:55.486Z"
+    },
+    {
+      "message": "All workstations need to be replaced with ones of blue & white trim.",
+      "attention": false,
+      "tech": "William Wallace",
+      "date": "2020-04-16T18:49:42.980Z",
+      "id": 5
+    }
+  ],
+  "techs": [
+    {
+      "id": 1,
+      "firstName": "John",
+      "lastName": "Doe"
+    },
+    {
+      "id": 2,
+      "firstName": "Sam",
+      "lastName": "Smith"
+    },
+    {
+      "id": 3,
+      "firstName": "Sara",
+      "lastName": "Wilson"
+    },
+    {
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "id": 4
+    },
+    {
+      "firstName": "Sally",
+      "lastName": "Mae",
+      "id": 5
+    },
+    {
+      "firstName": "William",
+      "lastName": "Wallace",
+      "id": 7
+    },
+    {
+      "firstName": "Albert",
+      "lastName": "Cos",
+      "id": 8
+    },
+    {
+      "firstName": "Don",
+      "lastName": "Johnson",
+      "id": 9
+    },
+    {
+      "firstName": "Starr",
+      "lastName": "Lord",
+      "id": 10
+    },
+    {
+      "firstName": "Bob",
+      "lastName": "Ebert",
+      "id": 11
+    }
+  ]
+}
