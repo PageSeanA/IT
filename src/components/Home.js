@@ -1,4 +1,4 @@
-// Landing Page
+// Note. This Home Landing Page - I may not use this page or may refactor it to an error page. 
 
 import React from 'react';
 

@@ -35,8 +35,7 @@ const App = () => {
 
 <BrowserRouter>
   <SearchBar /> 
-  <Route exact path='/home' component={Home} />
-  <Route exact path='../app' component={App} />
+  <Route exact path='/' component={Logs} />
   <Route path='/about' component={About} />
   <Route path='/contact' component={Contact} />
 </BrowserRouter>
@@ -48,7 +47,6 @@ const App = () => {
       <EditLogModal />
       <AddTechModal />
       <TechListModal />
-      <Logs />
     </div>
   </Fragment>
 

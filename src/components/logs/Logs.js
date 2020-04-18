@@ -17,6 +17,8 @@ const Logs = ({log: { logs, loading }, getLogs }) => {
     }
 
     return (
+        <div className="container">
+
         <ul className="collection with-header">
             <li className="collection-header">
                 <h4 className="center" > <b>IT Help Desk Log</b></h4>
@@ -27,6 +29,7 @@ const Logs = ({log: { logs, loading }, getLogs }) => {
                 logs.map(log => <LogItem log={log} key={log.id} />)
             )}
         </ul>
+        </div>
     );
 };
 
