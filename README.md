@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+At its core, this IT Help Desk Log for my fictional aftermarket automotive parts and accessories company is a to-do list that calls an API, uses React to render and update its html while Redux stores and updates the state used to render the application. This project uses React Route to navigate to the various pages. The IT Help Desk Log main page uses modals for the pop up windows where input and data is displayed to the user. Materialize-CSS gives the site its responsive CSS framework. Materialize Icons are used to give the site a simple modern design.
+
+This site was inspired by past jobs that required inputting information into actually log books and later excel spread sheets. While both of these methods work neither were user friendly. This IT Help Desk Log would be a low cost, light weight, easy to impalement application for logging in and keeping track of items that need to be taken care of. Overall this project has allowed me to better understand React and Redux.
 
 ## Available Scripts
 
