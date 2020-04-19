@@ -1,9 +1,8 @@
 import React from 'react';
-import Moment from 'react-moment';
-import {connect} from 'react-redux';
+import Moment from 'react-moment'; //Allows for formation of Dates.
+import {connect} from 'react-redux'; //Bring in {connect} due to working with Redux. 
 import PropTypes from 'prop-types';
 import {deleteLog, setCurrent} from '../../actions/logActions';
-
 import M from 'materialize-css/dist/js/materialize.min.js';
 
 const LogItem = ({log, deleteLog, setCurrent}) => {
@@ -14,24 +13,24 @@ const LogItem = ({log, deleteLog, setCurrent}) => {
     
     return (
         <li className="collection-item">
-            <div>
-                <a href="#edit-log-modal" className={`modal-trigger ${
-                    log.attention ? 'red-text' : 'blue-text'
-                    }`}
-                    onClick={() => setCurrent(log)}
-                    >
+            <div> 
+                {/* The href opens a modal.// */}
+                <a href="#edit-log-modal" className={`modal-trigger ${log.attention ? 'red-text' : 'blue-text'}`}
+// The className modal-trigger is dynamic due to the back tick marks. The condition $ is, (?) if log.attention is...
+// true make text red, else (:) make text blue.
+                onClick={() => setCurrent(log)}>
                 {log.message}
                 </a>
                 <br/>
-                <span className='grey-text'>
-                <span className="black-text">ID#{log.id}</span> last updated by {''}
-                <span className="black-text">{log.tech}</span> on {''}
-                <Moment format ='MMM do YYYY, h:mm:ss a'>{log.date}</Moment> 
+                <span className='black-text'>
+                <span className="blue-text">ID#{log.id}</span> last updated by {''}
+                <span className="blue-text">{log.tech}</span> on {''}
+                <Moment format ='MMM Do YYYY, h:mm:ss a'>{log.date}</Moment> 
                 </span>
-                <a href='#' onClick={onDelete} className="secondary-content">
+                {/* Delete Trashcan Button from Material Icons */}
+                <a href='#!' onClick={onDelete} className="secondary-content">
                     <i className="material-icons grey-text">delete</i>
                 </a>
-
             </div>
         </li>
     );
@@ -42,5 +41,5 @@ log: PropTypes.object.isRequired,
 deleteLog: PropTypes.func.isRequired,
 setCurrent: PropTypes.func.isRequired
 };
-
+//Not getting anything from the state so null. Adding action of deleteLog.
 export default connect(null, {deleteLog, setCurrent}) (LogItem)

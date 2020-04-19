@@ -1,5 +1,5 @@
-import {GET_TECHS, ADD_TECH, DELETE_TECH, SET_LOADING, TECHS_ERROR} from './types';
 
+import {GET_TECHS, ADD_TECH, DELETE_TECH, SET_LOADING, TECHS_ERROR} from './types';
 
 // Get techs from server.
 export const getTechs = () => async dispatch => {
@@ -22,7 +22,6 @@ export const getTechs = () => async dispatch => {
 };
 
 // Add technicians to server.
-
 export const addTech = (tech) => async dispatch => {
     try {
         setLoading();

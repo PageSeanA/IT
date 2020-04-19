@@ -1,3 +1,4 @@
+
 import React, {useEffect} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
@@ -10,6 +11,7 @@ const TechListModal = ({getTechs, tech: {techs, loading}}) => {
     // const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        // >> NOTE: The below //E-D-N-L rule specifies the rules you want to disable. Do not DELETE or UNCOMMENT. << 
         getTechs();
         //eslint-disable-next-line 
     }, []);
@@ -24,15 +26,19 @@ const TechListModal = ({getTechs, tech: {techs, loading}}) => {
     //     setLoading(false);
     // };
 
+
+    //Renders the IT Technician List.
     return (
-        <div id="tech-list-modal" className="modal">
+        //The tech-list-modal id needs to match the id in AddBtn.js.
+        <div id="tech-list-modal" className="modal">     
+
             <div className="modal-content">
-                <h4>Technician List</h4>
+                <h4><b>IT Technician List</b></h4>
                 <ul className="collection">
-{/* Remember, it starts out at null. Check to make sure it is not null, if it's not done loading go ahead and map through techs. */}
+{/* Remember, it starts out as null until the request & response is made. Check to make sure it is not null, if it's not done loading go ahead and map through techs. */}
                     {!loading && 
                     techs !== null &&
-                    techs.map(tech => <TechItem tech={tech} key={tech.id} />)}  
+                    techs.map(tech => (<TechItem tech={tech} key={tech.id} />))}  
                 </ul>
             </div>
         </div>

@@ -1,30 +1,31 @@
+//This is a form & will have component level state, brought in the {useState} hook. 
 import React, {useState, useEffect} from 'react';
 import TechSelectOptions from '../techs/TechSelectOptions';
 
 import {connect} from 'react-redux'; 
 import PropTypes from 'prop-types';
-import M from 'materialize-css/dist/js/materialize.min.js';
+import M from 'materialize-css/dist/js/materialize.min.js'; //Brought this in for our toast/alert popup window.
 import {updateLog} from "../../actions/logActions";
 
 const EditLogModal = ({current, updateLog}) => {
-
-    const [message, setMessage] = useState('');
-    const [attention, setAttention] = useState(false);
+//Below are the declared states. 
+    const [message, setMessage] = useState(''); //The default is an empty string.
+    const [attention, setAttention] = useState(false); //The default is false.
     const [tech, setTech] = useState('');
-
+//Setting the form data with the current data via useEffect hook.
     useEffect (() => {
         if(current) {
             setMessage(current.message);
             setAttention(current.attention);
             setTech(current.tech);
-
         }
         
     }, [current]);
-    
+
+    //Error checking with a toast/alert popup window.
     const onSubmit = () => {
         if(message === "" | tech === ""){
-            M.toast({html: "Please enter a log message and select a technician."});
+            M.toast({html: "Please enter a log message and select a technician"});
         } else {
             const updLog = {
                 id: current.id,
@@ -46,7 +47,7 @@ const EditLogModal = ({current, updateLog}) => {
 
     return <div id ="edit-log-modal" className="modal" style={modalStyle}>
         <div className="modal-content">
-            <h4>Enter System Log</h4>
+            <h4><b>Edit System Log</b></h4>
             <div className="row">
                 <div className="input-field">
                 <input 
@@ -91,7 +92,7 @@ const EditLogModal = ({current, updateLog}) => {
         
         <div className="modal-footer">
             <a 
-            href="#" 
+            href="#!" 
             onClick={onSubmit} 
             className="modal-close waves-effect orange waves-light btn"> 
             Enter 

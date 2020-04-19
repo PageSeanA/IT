@@ -1,3 +1,5 @@
+//When site is (re)loading and it's fetching this shows a blue preloader. 
+
 import React from 'react';
 
 const Preloader = () => {

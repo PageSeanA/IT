@@ -1,28 +1,17 @@
+
+// The import fetches the functionality & actions from Types.js.
 import {GET_LOGS, SET_LOADING, LOGS_ERROR, ADD_LOG, DELETE_LOG, UPDATE_LOG, SEARCH_LOGS, SET_CURRENT, CLEAR_CURRENT} from '../actions/types';
 
-// export const getLogs = () => {
-//     return async (dispatch) => {
-//         setLoading();
-
-//         const res = await fetch('/logs')
-//         const data = res.json();
-
-//         dispatch({
-//             type: GET_LOGS,
-//             payload: data
-//         });
-//     };
-// };
-
-//Gets logs from server. 
+//Gets logs from server. The async dispatch allows the app to make a request the backend then wait on the response and 
+// then dispatch to the Reducer.
 export const getLogs = () => async dispatch => {
     try {
         setLoading();
-
+        //Fetch request.
         const res = await fetch('/logs')
+        //Get data.
         const data = await res.json();
-
-
+        //Dispatch object to Reducer. 
         dispatch({
             type: GET_LOGS,
             payload: data
@@ -33,14 +22,13 @@ export const getLogs = () => async dispatch => {
             payload: err.response.statusText
         });
         }
-
 };
 
 //Adds a new log
 export const addLog = (log) => async dispatch => {
     try {
         setLoading();
-
+        //Passing in an object.
         const res = await fetch('/logs', {
             method: 'POST',
             body: JSON.stringify(log),
@@ -62,7 +50,7 @@ export const addLog = (log) => async dispatch => {
         }
 };
 
-//Deletes log from server.
+//Deletes log from server. Taking in an id so it knows which one to delete. 
 export const deleteLog = (id) => async dispatch => {
     try {
         setLoading();
@@ -75,13 +63,15 @@ export const deleteLog = (id) => async dispatch => {
             type: DELETE_LOG,
             payload: id
         });
-    } catch (err) {
+        } 
+    
+    catch (err) {
         dispatch ({
             type: LOGS_ERROR,
             payload: err.response.statusText
         });
-        }
-};
+                }
+                                                    };
 
 //Update log from server.
 export const updateLog = log => async dispatch => {
@@ -110,8 +100,7 @@ export const updateLog = log => async dispatch => {
         }
 };
 
-
-//Search server logs
+//Search server logs.
 export const searchLogs = (text) => async dispatch => {
     try {
         setLoading();
@@ -131,7 +120,7 @@ export const searchLogs = (text) => async dispatch => {
         }
 };
 
-//Set current log
+//Set current log.
 export const setCurrent = log => {
     return {
         type: SET_CURRENT,
@@ -139,7 +128,7 @@ export const setCurrent = log => {
     }
 }
 
-//Clear current log
+//Clear current log.
 export const clearCurrent = log => {
     return {
         type: CLEAR_CURRENT

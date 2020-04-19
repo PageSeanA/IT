@@ -1,3 +1,5 @@
+//Types of functionality & actions that this app is going to have. 
+
 export const GET_LOGS = 'GET_LOGS';
 export const ADD_LOG = 'ADD_LOG';
 export const DELETE_LOG = 'DELETE_LOG';
